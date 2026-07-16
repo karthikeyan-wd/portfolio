@@ -53,14 +53,16 @@ function FloatingBadge({
   animate, 
   delay = 0,
   color = 'text-primary-500',
-  rotation = 0
+  rotation = 0,
+  displayClass = 'hidden md:flex'
 }: { 
   icon: any, 
   className: string, 
   animate: any, 
   delay?: number,
   color?: string,
-  rotation?: number
+  rotation?: number,
+  displayClass?: string
 }) {
   return (
     <motion.div
@@ -73,9 +75,9 @@ function FloatingBadge({
         repeatType: 'reverse', 
         ease: 'easeInOut' 
       }}
-      className={`absolute hidden lg:flex pointer-events-none z-0 ${className}`}
+      className={`absolute ${displayClass} pointer-events-none z-0 ${className}`}
     >
-      <div className="bg-white/5 dark:bg-black/20 backdrop-blur-md border border-black/5 dark:border-white/10 p-4 rounded-2xl shadow-xl flex items-center justify-center">
+      <div className="bg-white/5 dark:bg-black/20 backdrop-blur-md border border-black/5 dark:border-white/10 p-3 md:p-4 rounded-xl md:rounded-2xl shadow-xl flex items-center justify-center transform scale-75 md:scale-100 origin-center">
         <Icon size={36} className={`drop-shadow-lg ${color}`} />
       </div>
     </motion.div>
@@ -123,19 +125,21 @@ export default function Hero() {
       {/* Floating Badges */}
       <FloatingBadge 
         icon={GithubIcon}
-        className="top-[20%] left-[15%]"
+        className="top-[12%] left-[4%] md:top-[20%] md:left-[15%]"
         animate={{ y: [-15, 15], rotate: [-15, -5] }}
         delay={0}
         color="text-[var(--text-primary)]"
         rotation={-10}
+        displayClass="flex"
       />
       <FloatingBadge 
         icon={ReactIcon}
-        className="top-[25%] right-[15%]"
+        className="top-[15%] right-[4%] md:top-[25%] md:right-[15%]"
         animate={{ y: [15, -15], rotate: [5, 15] }}
         delay={1}
         color="text-[#61DAFB]"
         rotation={10}
+        displayClass="flex"
       />
       <FloatingBadge 
         icon={VscodeIcon}
@@ -155,11 +159,12 @@ export default function Hero() {
       />
       <FloatingBadge 
         icon={Smartphone}
-        className="top-[45%] right-[10%]"
+        className="bottom-[25%] left-[8%] md:bottom-auto md:top-[45%] md:left-auto md:right-[10%]"
         animate={{ y: [-10, 10], rotate: [10, 20] }}
         delay={2.5}
         color="text-primary-400"
         rotation={15}
+        displayClass="flex"
       />
       <FloatingBadge 
         icon={Layout}
