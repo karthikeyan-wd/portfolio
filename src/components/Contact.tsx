@@ -28,14 +28,14 @@ function TwitterIcon({ size = 18 }: { size?: number }) {
 }
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'karthikeyan@email.com', href: 'mailto:karthikeyan@email.com' },
-  { icon: Phone, label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
-  { icon: MapPin, label: 'Location', value: 'Chennai, India', href: '#' },
+  { icon: Mail, label: 'Email', value: 'karthikeyan.wd@gmail.com', href: 'mailto:karthikeyan.wd@gmail.com' },
+  { icon: Phone, label: 'Phone', value: '+91 90435 22612', href: 'tel:+919043522612' },
+  { icon: MapPin, label: 'Location', value: 'Salem, Tamil Nadu, India', href: '#' },
 ];
 
 const socials = [
-  { icon: GithubIcon, label: 'GitHub', href: '#' },
-  { icon: LinkedinIcon, label: 'LinkedIn', href: '#' },
+  { icon: GithubIcon, label: 'GitHub', href: 'https://github.com/karthikeyan-wd' },
+  { icon: LinkedinIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/karthi-keyan-a-10a539361/' },
   { icon: TwitterIcon, label: 'Twitter', href: '#' },
 ];
 
@@ -43,14 +43,38 @@ export default function Contact() {
   const { ref, isInView } = useScrollReveal();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormState({ name: '', email: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "657d6418-aa5b-4005-8c5f-ba84c2f462fc",
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormState({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitted(false), 3000);
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -213,10 +237,17 @@ export default function Contact() {
                 <button
                   type="submit"
                   id="contact-submit"
-                  className="group w-full px-6 py-3.5 bg-primary-600 hover:bg-primary-500 text-white rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/40 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={isSubmitting}
+                  className="group w-full px-6 py-3.5 bg-primary-600 hover:bg-primary-500 text-white rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/40 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  {isSubmitting ? (
+                    'Sending...'
+                  ) : (
+                    <>
+                      Send Message
+                      <Send size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </>
+                  )}
                 </button>
               </div>
             )}

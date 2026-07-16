@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import t2dImage from '../assets/T2D copy.png';
+import adminImage from '../assets/admin copy.png';
 
 function GithubIcon({ size = 20 }: { size?: number }) {
   return (
@@ -12,21 +14,21 @@ function GithubIcon({ size = 20 }: { size?: number }) {
 
 const projects = [
   {
-    title: 'VDrive Admin Dashboard',
-    description: 'A comprehensive admin panel for ride-hailing service management. Features real-time driver tracking, trip management, payment analytics, and subscription plan management.',
+    title: 'T2Drive Admin Portal',
+    description: 'T2Drive Admin is a comprehensive web-based administration platform for managing drivers, trips, vehicles, subscriptions, payments, and platform operations through a centralized dashboard with real-time monitoring and analytics',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'REST API'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+    image: adminImage,
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/karthikeyan-wd/t2drive-Admin-portal',
     featured: true,
   },
   {
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with modern UI, real-time inventory management, Stripe integration, and responsive design optimized for mobile shopping.',
-    tags: ['Next.js', 'Node.js', 'MongoDB', 'Stripe'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
+    title: 'T2Drive',
+    description: 'T2Drive is a complete mobility platform for driver partners, featuring digital onboarding, live ride requests, GPS navigation, real-time location tracking, secure payments, subscriptions, and trip management.',
+    tags: ['React Native', 'Node.js', 'Socket.IO', 'Maps'],
+    image: t2dImage,
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/karthikeyan-wd/T2drive-showcase',
     featured: true,
   },
   {
@@ -105,14 +107,18 @@ export default function Projects() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="glass-card overflow-hidden group"
+              className="glass-card overflow-hidden group cursor-pointer"
+              onClick={() => {
+                const targetUrl = project.githubUrl !== '#' ? project.githubUrl : (project.liveUrl !== '#' ? project.liveUrl : null);
+                if (targetUrl) window.open(targetUrl, '_blank');
+              }}
             >
               {/* Image */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 bg-[var(--bg-primary)]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-transparent opacity-60" />
@@ -122,6 +128,7 @@ export default function Projects() {
                   <div className="flex gap-3">
                     <a
                       href={project.liveUrl}
+                      onClick={(e) => e.stopPropagation()}
                       className="p-3 rounded-xl bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all"
                       aria-label={`View ${project.title} live`}
                     >
@@ -129,6 +136,7 @@ export default function Projects() {
                     </a>
                     <a
                       href={project.githubUrl}
+                      onClick={(e) => e.stopPropagation()}
                       className="p-3 rounded-xl bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all"
                       aria-label={`View ${project.title} source`}
                     >
@@ -172,17 +180,21 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-              className="glass-card p-5 group"
+              className="glass-card p-5 group cursor-pointer"
+              onClick={() => {
+                const targetUrl = project.githubUrl !== '#' ? project.githubUrl : (project.liveUrl !== '#' ? project.liveUrl : null);
+                if (targetUrl) window.open(targetUrl, '_blank');
+              }}
             >
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-sm font-bold text-[var(--text-primary)] group-hover:text-primary-400 transition-colors leading-tight">
                   {project.title}
                 </h3>
                 <div className="flex gap-1.5 flex-shrink-0 ml-2">
-                  <a href={project.githubUrl} className="text-[var(--text-muted)] hover:text-primary-400 transition-colors" aria-label="Source">
+                  <a href={project.githubUrl} onClick={(e) => e.stopPropagation()} className="text-[var(--text-muted)] hover:text-primary-400 transition-colors" aria-label="Source">
                     <GithubIcon size={14} />
                   </a>
-                  <a href={project.liveUrl} className="text-[var(--text-muted)] hover:text-primary-400 transition-colors" aria-label="Live">
+                  <a href={project.liveUrl} onClick={(e) => e.stopPropagation()} className="text-[var(--text-muted)] hover:text-primary-400 transition-colors" aria-label="Live">
                     <ExternalLink size={14} />
                   </a>
                 </div>

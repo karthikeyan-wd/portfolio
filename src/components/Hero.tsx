@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, ExternalLink } from 'lucide-react';
+import { ArrowDown, ExternalLink, Sparkles, Layout, Smartphone } from 'lucide-react';
+import GridBackground from './GridBackground';
 
-function GithubIcon({ size = 20 }: { size?: number }) {
+function GithubIcon({ size = 20, className = "" }: { size?: number, className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
     </svg>
   );
@@ -17,11 +18,67 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-function TwitterIcon({ size = 20 }: { size?: number }) {
+function TwitterIcon({ size = 20, className = "" }: { size?: number, className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
     </svg>
+  );
+}
+
+function ReactIcon({ size = 20, className = "" }: { size?: number, className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="-10.5 -9.45 21 18.9" fill="currentColor" className={className}>
+      <circle cx="0" cy="0" r="2" fill="currentColor"></circle>
+      <g stroke="currentColor" strokeWidth="1" fill="none">
+        <ellipse rx="10" ry="4.5"></ellipse>
+        <ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
+        <ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
+      </g>
+    </svg>
+  );
+}
+
+function VscodeIcon({ size = 20, className = "" }: { size?: number, className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"/>
+    </svg>
+  );
+}
+
+function FloatingBadge({ 
+  icon: Icon, 
+  className, 
+  animate, 
+  delay = 0,
+  color = 'text-primary-500',
+  rotation = 0
+}: { 
+  icon: any, 
+  className: string, 
+  animate: any, 
+  delay?: number,
+  color?: string,
+  rotation?: number
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5, rotate: rotation - 10 }}
+      animate={{ opacity: 1, scale: 1, ...animate }}
+      transition={{ 
+        duration: 3, 
+        delay, 
+        repeat: Infinity, 
+        repeatType: 'reverse', 
+        ease: 'easeInOut' 
+      }}
+      className={`absolute hidden lg:flex pointer-events-none z-0 ${className}`}
+    >
+      <div className="bg-white/5 dark:bg-black/20 backdrop-blur-md border border-black/5 dark:border-white/10 p-4 rounded-2xl shadow-xl flex items-center justify-center">
+        <Icon size={36} className={`drop-shadow-lg ${color}`} />
+      </div>
+    </motion.div>
   );
 }
 
@@ -32,6 +89,7 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center px-5 pt-16 pb-24 md:pb-16 overflow-hidden"
       style={{ background: 'var(--bg-primary)' }}
     >
+      <GridBackground />
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -62,13 +120,54 @@ export default function Hero() {
         />
       </div>
 
-      {/* Grid dots pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
-          backgroundSize: '32px 32px',
-        }}
+      {/* Floating Badges */}
+      <FloatingBadge 
+        icon={GithubIcon}
+        className="top-[20%] left-[15%]"
+        animate={{ y: [-15, 15], rotate: [-15, -5] }}
+        delay={0}
+        color="text-[var(--text-primary)]"
+        rotation={-10}
+      />
+      <FloatingBadge 
+        icon={ReactIcon}
+        className="top-[25%] right-[15%]"
+        animate={{ y: [15, -15], rotate: [5, 15] }}
+        delay={1}
+        color="text-[#61DAFB]"
+        rotation={10}
+      />
+      <FloatingBadge 
+        icon={VscodeIcon}
+        className="bottom-[30%] left-[18%]"
+        animate={{ y: [-20, 20], rotate: [-5, 5] }}
+        delay={0.5}
+        color="text-[#007ACC]"
+        rotation={0}
+      />
+      <FloatingBadge 
+        icon={Sparkles}
+        className="bottom-[25%] right-[20%]"
+        animate={{ y: [20, -20], rotate: [-10, 0] }}
+        delay={1.5}
+        color="text-accent-400"
+        rotation={-5}
+      />
+      <FloatingBadge 
+        icon={Smartphone}
+        className="top-[45%] right-[10%]"
+        animate={{ y: [-10, 10], rotate: [10, 20] }}
+        delay={2.5}
+        color="text-primary-400"
+        rotation={15}
+      />
+      <FloatingBadge 
+        icon={Layout}
+        className="top-[50%] left-[8%]"
+        animate={{ y: [10, -10], rotate: [-20, -10] }}
+        delay={2}
+        color="text-emerald-400"
+        rotation={-15}
       />
 
       {/* Content */}
@@ -147,8 +246,8 @@ export default function Hero() {
           className="flex items-center justify-center gap-4"
         >
           {[
-            { icon: GithubIcon, href: '#', label: 'GitHub' },
-            { icon: LinkedinIcon, href: '#', label: 'LinkedIn' },
+            { icon: GithubIcon, href: 'https://github.com/karthikeyan-wd', label: 'GitHub' },
+            { icon: LinkedinIcon, href: 'https://www.linkedin.com/in/karthi-keyan-a-10a539361/', label: 'LinkedIn' },
             { icon: TwitterIcon, href: '#', label: 'Twitter' },
           ].map(social => (
             <a
