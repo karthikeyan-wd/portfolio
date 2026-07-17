@@ -1,73 +1,101 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+# Professional Portfolio
 
-Currently, two official plugins are available:
+<div align="center">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Full Stack & Mobile Application Developer
 
-## React Compiler
+Building modern, scalable, and user-focused web and mobile applications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🌐 **Live Demo:** https://portfolio-theta-sandy-35.vercel.app/
 
-## Expanding the ESLint configuration
+[LinkedIn](https://www.linkedin.com/in/karthi-keyan-a-10a539361/) • [GitHub](https://github.com/karthikeyan-wd) • [Email](mailto:karthikeyan.wd@gmail.com)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+</div>
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Welcome to my professional portfolio.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+This website showcases my experience, technical skills, and the products I've built throughout my software development journey. From responsive web applications to production-ready mobile applications, every project reflects my passion for building modern, scalable, and high-quality digital experiences.
+
+
+## 🛠 Built With
+
+### ⚛ Frontend
+
+<p>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+  <img src="https://img.shields.io/badge/Framer_Motion-000000?style=for-the-badge&logo=framer&logoColor=white" />
+</p>
+
+### 🎨 UI & Design
+
+<p>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
+  <img src="https://img.shields.io/badge/Lucide_React-111827?style=for-the-badge&logo=react&logoColor=61DAFB" />
+</p>
+
+### 🛠 Development Tools
+
+<p>
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" />
+</p>
+
+### 🚀 Deployment
+
+<p>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+</p>
+
+## ✨ Features
+
+<div align="center">
+
+✨ Modern UI &nbsp;•&nbsp; 📱 Fully Responsive &nbsp;•&nbsp; 🎬 Smooth Animations &nbsp;•&nbsp; 💼 Project Showcase &nbsp;•&nbsp; 🛠 Skills Timeline &nbsp;•&nbsp; 🌙 Dark Mode &nbsp;•&nbsp; ⚡ High Performance &nbsp;•&nbsp; 🔍 SEO Friendly
+
+</div>
+
+---
+---
+
+<div align="center">
+
+## 🚀 Run Locally
+
+</div>
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/portfolio.git
+
+# Navigate to the project
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
 ```
+## ⭐ Support My Portfolio
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+If you enjoyed exploring my portfolio, please consider giving this repository a ⭐ on GitHub.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+It motivates me to continue building better projects and sharing my work with the community.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<div align="center">
+
+### ⭐⭐⭐⭐⭐
+
+**Thank you for visiting my portfolio! ❤️**
+
+Made with ❤️ by **Karthikeyan**
+
+</div>
