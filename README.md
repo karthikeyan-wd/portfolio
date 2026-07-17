@@ -8,7 +8,7 @@ Building modern, scalable, and user-focused web and mobile applications.
 
 🌐 **Live Demo:** https://portfolio-theta-sandy-35.vercel.app/
 
-[LinkedIn](https://linkedin.com/in/your-profile) • [GitHub](https://github.com/your-profile) • [Email](mailto:your-email@example.com)
+[LinkedIn](https://www.linkedin.com/in/karthi-keyan-a-10a539361/) • [GitHub](https://github.com/karthikeyan-wd) • [Email](mailto:karthikeyan.wd@gmail.com)
 
 </div>
 
@@ -18,83 +18,44 @@ Building modern, scalable, and user-focused web and mobile applications.
 
 Welcome to my professional portfolio.
 
-This website showcases my experience, technical skills, and the products I've built throughout my software development journey. From responsive web applications to production-ready mobile apps, every project reflects my passion for building high-quality digital experiences.
+This website showcases my experience, technical skills, and the products I've built throughout my software development journey. From responsive web applications to production-ready mobile applications, every project reflects my passion for building modern, scalable, and high-quality digital experiences.
 
 ---
 
-## ✨ Highlights
+## 🛠 Built With
 
-- 📱 Full Stack & Mobile Development
-- ⚛ React & React Native
-- ☁ Cloud & Backend Integration
-- 🎨 Modern UI/UX
-- 🚀 Production Projects
-- 💳 Payment & Third-Party Integrations
-- 📍 Real-Time Applications
-- 🤖 AI-Powered Features
-
----
-
-## 🛠 Tech Stack
-
-**Frontend**
-
+### Frontend
 - React.js
 - TypeScript
-- Tailwind CSS
 - Vite
+- Tailwind CSS
+- Framer Motion
 
-**Mobile**
+### UI & Design
+- Figma
+- Lucide React Icons
 
-- React Native
-
-**Backend**
-
-- Node.js
-- Express.js
-- PostgreSQL
-- MongoDB
-
-**Cloud & Services**
-
-- AWS S3
-- Firebase
-- Redis
-- Docker
-- Vercel
-
-**Tools**
-
+### Development Tools
+- Visual Studio Code
 - Git
 - GitHub
-- Figma
-- Android Studio
-- Xcode
-- Postman
+- npm
+
+### Deployment
+- Vercel
 
 ---
 
-## 💼 Featured Projects
+## ✨ Features
 
-### 🚖 T2Drive
-Production mobility platform featuring driver onboarding, live ride requests, GPS tracking, secure payments, subscriptions, and real-time communication.
-
-### 🖥 T2Drive Admin Portal
-Enterprise dashboard for managing drivers, rides, subscriptions, document verification, and business operations.
-
-### 📋 Zithmi
-Internal operations platform focused on workflow management, enterprise UI, and business process automation.
-
----
-
-## 🎯 Current Focus
-
-- Advanced React Native
-- AI Integration
-- Cloud Architecture
-- Clean Architecture
-- Performance Optimization
-- CI/CD Automation
+- Modern & Responsive UI
+- Smooth Scroll Animations
+- Dark Theme
+- Interactive Project Showcase
+- Skills & Experience Timeline
+- Mobile Friendly
+- Fast Performance
+- SEO Optimized
 
 ---
 
@@ -112,22 +73,18 @@ npm run dev
 
 ---
 
-## 📬 Contact
+## ⭐ Support My Portfolio
 
-🌐 Portfolio: https://portfolio-theta-sandy-35.vercel.app/
+If you enjoyed exploring my portfolio, please consider giving this repository a ⭐ on GitHub.
 
-💼 LinkedIn: https://www.linkedin.com/in/karthi-keyan-a-10a539361/
-
-💻 GitHub: https://github.com/your-profile
-
-📧 Email: karthikeyan.wd@gmail.com
-
----
+It motivates me to continue building better projects and sharing my work with the community.
 
 <div align="center">
 
-**Building products that solve real problems.**
+### ⭐⭐⭐⭐⭐
 
-⭐ If you like this portfolio, consider giving it a star.
+**Thank you for visiting my portfolio! ❤️**
+
+Made with ❤️ by **Karthikeyan**
 
 </div>
