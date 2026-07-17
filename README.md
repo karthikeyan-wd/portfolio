@@ -54,17 +54,13 @@ This website showcases my experience, technical skills, and the products I've bu
 
 ## ✨ Features
 
-- Modern & Responsive UI
-- Smooth Scroll Animations
-- Dark Theme
-- Interactive Project Showcase
-- Skills & Experience Timeline
-- Mobile Friendly
-- Fast Performance
-- SEO Optimized
+<div align="center">
+
+✨ Modern UI &nbsp;•&nbsp; 📱 Fully Responsive &nbsp;•&nbsp; 🎬 Smooth Animations &nbsp;•&nbsp; 💼 Project Showcase &nbsp;•&nbsp; 🛠 Skills Timeline &nbsp;•&nbsp; 🌙 Dark Mode &nbsp;•&nbsp; ⚡ High Performance &nbsp;•&nbsp; 🔍 SEO Friendly
+
+</div>
 
 ---
-
 ## 🚀 Run Locally
 
 ```bash
