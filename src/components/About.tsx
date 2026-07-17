@@ -76,7 +76,7 @@ const skills: SkillItem[] = [
 ];
 
 const stats = [
-  { value: '10', label: 'Months Experience' },
+  { value: '10+', label: 'Months Experience' },
   { value: '4', label: 'Projects Completed' },
   { value: '3', label: 'Happy Clients' },
   { value: '2', label: 'Awards' },

@@ -224,7 +224,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.9 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mb-12"
         >
           <button
             onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
@@ -234,6 +234,18 @@ export default function Hero() {
             View My Work
             <ExternalLink size={16} className="group-hover:translate-x-0.5 transition-transform" />
           </button>
+          
+          <a
+            href="https://life-journey-portfolio-nine.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="cta-life-journey"
+            className="group w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-accent-500 to-primary-500 hover:from-accent-400 hover:to-primary-400 text-white rounded-xl font-semibold text-sm transition-all duration-300 shadow-lg shadow-accent-500/25 hover:shadow-accent-400/40 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
+            Visit My Life Journey
+          </a>
+
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             id="cta-contact"

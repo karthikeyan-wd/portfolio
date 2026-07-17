@@ -4,46 +4,83 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const experiences = [
   {
-    role: 'Senior Full-Stack Developer',
-    company: 'TechCorp Solutions',
-    location: 'Chennai, India',
-    period: '2024 – Present',
-    description: 'Lead development of enterprise-grade applications serving 50K+ users. Architect scalable microservices and mentor junior developers.',
+    role: 'React Native Full Stack Developer',
+    company: 'Zithtech',
+    location: 'Chennai, India (On-site)',
+    period: '2026 – Present',
+    description: 'Transitioned into a React Native Full Stack Developer role, building scalable cross-platform mobile applications and supporting backend services. Developed end-to-end solutions from UI implementation to API integration, authentication, real-time features, and deployment.',
     achievements: [
-      'Reduced page load times by 40% through performance optimization',
-      'Implemented CI/CD pipeline reducing deployment time by 60%',
-      'Led migration from monolith to microservices architecture',
+      'Developed cross-platform mobile applications using React Native',
+      'Built and integrated secure REST APIs with backend services',
+      'Implemented authentication, real-time updates, push notifications, and payment integration',
+      'Worked on production applications including ride-booking and business management platforms',
+      'Collaborated with UI/UX designers, backend engineers, and QA teams in an Agile environment',
+      'Optimized application performance and resolved production issues',
     ],
-    tech: ['React', 'Node.js', 'AWS', 'Docker'],
+    tech: ['React Native', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript', 'Redux Toolkit', 'Socket.IO', 'Firebase', 'AWS', 'Git'],
     current: true,
   },
   {
-    role: 'Full-Stack Developer',
-    company: 'Digital Innovations Ltd',
-    location: 'Bangalore, India',
-    period: '2023 – 2024',
-    description: 'Developed and maintained multiple client-facing web applications and mobile apps with a focus on user experience and performance.',
+    role: 'Associate Software Engineer (Full Stack Developer)',
+    company: 'Zithtech',
+    location: 'Chennai, India (On-site)',
+    period: '2026',
+    description: 'Promoted to Associate Software Engineer, contributing to the design, development, and maintenance of full-stack applications. Working across frontend, backend, APIs, databases, and cloud services to deliver scalable, production-ready software solutions.',
     achievements: [
-      'Built 10+ responsive web applications from scratch',
-      'Integrated real-time features using WebSocket technology',
-      'Improved SEO rankings by 50% through optimization',
+      'Developed end-to-end web applications using modern frontend and backend technologies',
+      'Built secure REST APIs and integrated third-party services',
+      'Designed responsive, high-performance user interfaces with React',
+      'Collaborated with cross-functional teams throughout the software development lifecycle',
+      'Optimized application performance, fixed production issues, and implemented new features',
+      'Participated in code reviews, testing, deployment, and technical documentation',
     ],
-    tech: ['Vue.js', 'Express', 'PostgreSQL', 'Firebase'],
+    tech: ['React.js', 'React Native', 'Node.js', 'Express.js', 'MongoDB', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Git', 'REST APIs', 'AWS', 'Docker'],
     current: false,
   },
   {
-    role: 'Frontend Developer',
-    company: 'StartupXYZ',
-    location: 'Remote',
-    period: '2022 – 2023',
-    description: 'Built pixel-perfect, responsive interfaces for early-stage products. Collaborated closely with designers and product managers.',
+    role: 'Web Developer Trainee',
+    company: 'Zithtech',
+    location: 'Chennai, India (On-site)',
+    period: '2025 – 2026',
+    description: 'Contributed to the development of scalable web applications by building responsive user interfaces, integrating APIs, and collaborating with cross-functional teams. Worked on real-world projects using modern frontend technologies and industry best practices.',
     achievements: [
-      'Developed component library used across 5 products',
-      'Achieved 95+ Lighthouse performance scores',
-      'Reduced bundle size by 35% through code splitting',
+      'Developed responsive and reusable frontend components using React.js',
+      'Integrated REST APIs and implemented dynamic application features',
+      'Collaborated with designers and backend developers to deliver production-ready solutions',
+      'Participated in bug fixing, performance optimization, and code reviews',
     ],
-    tech: ['React', 'TypeScript', 'Tailwind', 'Vite'],
+    tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'REST APIs', 'Git', 'Vite'],
     current: false,
+  },
+  {
+    role: 'UI/UX Designer Intern',
+    company: 'Novitech',
+    location: 'Coimbatore, India (Remote)',
+    period: '2025 (2 Months)',
+    description: 'Designed intuitive and user-centered interfaces for web and mobile applications. Created wireframes, prototypes, and modern UI designs while collaborating with developers to ensure a seamless user experience.',
+    achievements: [
+      'Designed responsive web and mobile application interfaces in Figma',
+      'Created wireframes, user flows, and interactive prototypes',
+      'Improved user experience through modern UI design principles',
+      'Collaborated remotely with developers to hand off production-ready designs',
+    ],
+    tech: ['Figma', 'UI Design', 'UX Research', 'Wireframing', 'Prototyping', 'Design Systems'],
+    current: false,
+  },
+  {
+    role: 'Web Developer Intern',
+    company: 'Vilora Tech',
+    location: 'Puducherry, India (On-site)',
+    period: '2025',
+    description: 'Worked as a Web Developer Intern, contributing to responsive web applications, UI development, and frontend feature implementation. Collaborated with the development team to build modern, user-friendly interfaces and improve application performance.',
+    achievements: [
+      'Developed responsive web pages using modern frontend technologies',
+      'Converted Figma/UI designs into reusable, pixel-perfect components',
+      'Fixed bugs, optimized UI performance, and improved user experience',
+      'Collaborated with developers using Git and followed agile development practices',
+    ],
+    tech: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Git'],
+    current: true,
   },
 ];
 
@@ -106,8 +143,13 @@ export default function Experience() {
                   {/* Header */}
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                     <div>
-                      <h3 className="text-lg font-bold text-[var(--text-primary)]">
-                        {exp.role}
+                      <h3 className="text-lg font-bold text-[var(--text-primary)] flex items-center gap-1.5">
+                        {exp.role.replace(/ (Intern|Trainee)/, '')}
+                        {(exp.role.includes('Intern') || exp.role.includes('Trainee')) && (
+                          <span className="text-sm font-medium text-[var(--text-muted)] mt-0.5">
+                            {exp.role.includes('Intern') ? 'Intern' : 'Trainee'}
+                          </span>
+                        )}
                       </h3>
                       <div className="flex items-center gap-2 mt-1">
                         <Building2 size={14} className="text-primary-400" />

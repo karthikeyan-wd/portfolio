@@ -20,6 +20,7 @@ const projects = [
     image: adminImage,
     liveUrl: '#',
     githubUrl: 'https://github.com/karthikeyan-wd/t2drive-Admin-portal',
+    launchingSoon: true,
     featured: true,
   },
   {
@@ -29,42 +30,35 @@ const projects = [
     image: t2dImage,
     liveUrl: '#',
     githubUrl: 'https://github.com/karthikeyan-wd/T2drive-showcase',
+    launchingSoon: true,
     featured: true,
   },
   {
-    title: 'AI Chat Application',
-    description: 'Intelligent chatbot application powered by OpenAI APIs. Features streaming responses, conversation history, and a sleek glassmorphism UI.',
-    tags: ['React', 'OpenAI', 'WebSocket', 'Express'],
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
-    liveUrl: '#',
+    title: 'Zukvo',
+    description: 'Zithmi (Zithspace) is Zukvo\'s all-in-one internal operations platform, combining CRM, project management, client portal, document management, invoicing, proposals, and multi-tenant business operations in a single workspace.',
+    tags: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+    liveUrl: 'https://www.zukvo.com/',
     githubUrl: '#',
     featured: false,
   },
   {
-    title: 'Fitness Tracker App',
-    description: 'Cross-platform mobile fitness app with workout tracking, progress visualization, social features, and personalized AI-driven workout recommendations.',
-    tags: ['React Native', 'Firebase', 'Charts', 'Expo'],
-    image: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&h=400&fit=crop',
-    liveUrl: '#',
+    title: 'Zukvo Landing Page',
+    description: 'Zithmi (Zithspace) is Zukvo\'s all-in-one internal operations platform, combining CRM, project management, client portal, document management, invoicing, proposals, and multi-tenant business operations in a single workspace',
+    tags: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript'],
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+    liveUrl: 'https://www.zukvo.com/',
     githubUrl: '#',
     featured: false,
   },
+
   {
-    title: 'Real-Time Collaboration Tool',
-    description: 'Team collaboration platform with real-time document editing, video conferencing integration, task boards, and team analytics dashboard.',
-    tags: ['Vue.js', 'Socket.io', 'PostgreSQL', 'Docker'],
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop',
-    liveUrl: '#',
-    githubUrl: '#',
-    featured: false,
-  },
-  {
-    title: 'Portfolio v2 Website',
-    description: 'This very portfolio — a premium, mobile-first web experience built with React, Tailwind v4, Framer Motion, and glassmorphism design principles.',
-    tags: ['React', 'Tailwind v4', 'Framer Motion', 'Vite'],
+    title: 'Life Journey Portfolio',
+    description: 'A documentary-style, interactive web experience chronicling my personal and professional evolution across distinct chapters using scroll-driven animations.',
+    tags: ['React', 'TypeScript', 'Framer Motion', 'Tailwind'],
     image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://life-journey-portfolio-nine.vercel.app/',
+    githubUrl: 'https://github.com/karthikeyan-wd/life-journey-portfolio',
     featured: false,
   },
 ];
@@ -107,7 +101,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="glass-card overflow-hidden group cursor-pointer"
+              className="glass-card overflow-hidden group cursor-pointer relative"
               onClick={() => {
                 const targetUrl = project.githubUrl !== '#' ? project.githubUrl : (project.liveUrl !== '#' ? project.liveUrl : null);
                 if (targetUrl) window.open(targetUrl, '_blank');
@@ -122,6 +116,20 @@ export default function Projects() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-transparent to-transparent opacity-60" />
+                
+                {(project as any).launchingSoon && (
+                  <span className="absolute top-0 left-0 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-500 border-b border-r border-amber-500/20 rounded-br-xl backdrop-blur-md flex items-center gap-1.5 z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                    Launching Soon
+                  </span>
+                )}
+                
+                {project.liveUrl !== '#' && !(project as any).launchingSoon && (
+                  <span className="absolute top-0 left-0 px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-500 border-b border-r border-emerald-500/20 rounded-br-xl backdrop-blur-md flex items-center gap-1.5 z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live
+                  </span>
+                )}
                 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/20 transition-all duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -180,7 +188,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-              className="glass-card p-5 group cursor-pointer"
+              className="glass-card p-5 pt-7 group cursor-pointer relative overflow-hidden"
               onClick={() => {
                 const targetUrl = project.githubUrl !== '#' ? project.githubUrl : (project.liveUrl !== '#' ? project.liveUrl : null);
                 if (targetUrl) window.open(targetUrl, '_blank');
@@ -190,6 +198,12 @@ export default function Projects() {
                 <h3 className="text-sm font-bold text-[var(--text-primary)] group-hover:text-primary-400 transition-colors leading-tight">
                   {project.title}
                 </h3>
+                {project.liveUrl !== '#' && (
+                  <span className="absolute top-0 left-0 px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-500 border-b border-r border-emerald-500/20 rounded-br-xl backdrop-blur-md flex items-center gap-1.5">
+                    <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live
+                  </span>
+                )}
                 <div className="flex gap-1.5 flex-shrink-0 ml-2">
                   <a href={project.githubUrl} onClick={(e) => e.stopPropagation()} className="text-[var(--text-muted)] hover:text-primary-400 transition-colors" aria-label="Source">
                     <GithubIcon size={14} />
