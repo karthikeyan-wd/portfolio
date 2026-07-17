@@ -13,8 +13,6 @@ Building modern, scalable, and user-focused web and mobile applications.
 </div>
 
 
-## 🚀 About
-
 Welcome to my professional portfolio.
 
 This website showcases my experience, technical skills, and the products I've built throughout my software development journey. From responsive web applications to production-ready mobile applications, every project reflects my passion for building modern, scalable, and high-quality digital experiences.
