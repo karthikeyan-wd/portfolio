@@ -1,73 +1,133 @@
-# React + TypeScript + Vite
+# 💼 Karthikeyan | Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+### Full Stack & Mobile Application Developer
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Building modern, scalable, and user-focused web and mobile applications.
 
-## React Compiler
+🌐 **Live Demo:** https://portfolio-theta-sandy-35.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[LinkedIn](https://linkedin.com/in/your-profile) • [GitHub](https://github.com/your-profile) • [Email](mailto:your-email@example.com)
 
-## Expanding the ESLint configuration
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 About
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Welcome to my professional portfolio.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+This website showcases my experience, technical skills, and the products I've built throughout my software development journey. From responsive web applications to production-ready mobile apps, every project reflects my passion for building high-quality digital experiences.
+
+---
+
+## ✨ Highlights
+
+- 📱 Full Stack & Mobile Development
+- ⚛ React & React Native
+- ☁ Cloud & Backend Integration
+- 🎨 Modern UI/UX
+- 🚀 Production Projects
+- 💳 Payment & Third-Party Integrations
+- 📍 Real-Time Applications
+- 🤖 AI-Powered Features
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+
+- React.js
+- TypeScript
+- Tailwind CSS
+- Vite
+
+**Mobile**
+
+- React Native
+
+**Backend**
+
+- Node.js
+- Express.js
+- PostgreSQL
+- MongoDB
+
+**Cloud & Services**
+
+- AWS S3
+- Firebase
+- Redis
+- Docker
+- Vercel
+
+**Tools**
+
+- Git
+- GitHub
+- Figma
+- Android Studio
+- Xcode
+- Postman
+
+---
+
+## 💼 Featured Projects
+
+### 🚖 T2Drive
+Production mobility platform featuring driver onboarding, live ride requests, GPS tracking, secure payments, subscriptions, and real-time communication.
+
+### 🖥 T2Drive Admin Portal
+Enterprise dashboard for managing drivers, rides, subscriptions, document verification, and business operations.
+
+### 📋 Zithmi
+Internal operations platform focused on workflow management, enterprise UI, and business process automation.
+
+---
+
+## 🎯 Current Focus
+
+- Advanced React Native
+- AI Integration
+- Cloud Architecture
+- Clean Architecture
+- Performance Optimization
+- CI/CD Automation
+
+---
+
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/your-username/portfolio.git
+
+cd portfolio
+
+npm install
+
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📬 Contact
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🌐 Portfolio: https://portfolio-theta-sandy-35.vercel.app/
+
+💼 LinkedIn: https://www.linkedin.com/in/karthi-keyan-a-10a539361/
+
+💻 GitHub: https://github.com/your-profile
+
+📧 Email: karthikeyan.wd@gmail.com
+
+---
+
+<div align="center">
+
+**Building products that solve real problems.**
+
+⭐ If you like this portfolio, consider giving it a star.
+
+</div>
