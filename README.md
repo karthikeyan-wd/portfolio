@@ -65,7 +65,11 @@ This website showcases my experience, technical skills, and the products I've bu
 ---
 ---
 
+<div align="center">
+
 ## 🚀 Run Locally
+
+</div>
 
 ```bash
 # Clone the repository
@@ -80,11 +84,6 @@ npm install
 # Start the development server
 npm run dev
 ```
-
-🌐 **Open:** `http://localhost:5173`
-
----
-
 ## ⭐ Support My Portfolio
 
 If you enjoyed exploring my portfolio, please consider giving this repository a ⭐ on GitHub.
