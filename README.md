@@ -63,17 +63,25 @@ This website showcases my experience, technical skills, and the products I've bu
 </div>
 
 ---
+---
+
 ## 🚀 Run Locally
 
 ```bash
+# Clone the repository
 git clone https://github.com/your-username/portfolio.git
 
+# Navigate to the project
 cd portfolio
 
+# Install dependencies
 npm install
 
+# Start the development server
 npm run dev
 ```
+
+🌐 **Open:** `http://localhost:5173`
 
 ---
 
